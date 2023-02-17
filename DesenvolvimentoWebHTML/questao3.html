@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ficha Cadastral</title>
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>Ficha Cadastral</h1>
+
+	<form>
+		<label for="nome">Nome:</label>
+		<input type="text" id="nome" name="nome"><br><br>
+
+		<label for="rg">RG:</label>
+		<input type="text" id="rg" name="rg"><br><br>
+
+		<label for="cpf">CPF:</label>
+		<input type="text" id="cpf" name="cpf"><br><br>
+
+		<label for="endereco">Endereço:</label>
+		<input type="text" id="endereco" name="endereco"><br><br>
+
+		<label for="sexo">Sexo:</label>
+		<select id="sexo" name="sexo">
+			<option value="feminino">Feminino</option>
+			<option value="masculino">Masculino</option>
+			<option value="outro">Outro</option>
+		</select><br><br>
+
+		<label for="data_nascimento">Data de Nascimento:</label>
+		<input type="date" id="data_nascimento" name="data_nascimento"><br><br>
+
+		<label for="situacao_civil">Situação Civil:</label>
+		<select id="situacao_civil" name="situacao_civil">
+			<option value="solteiro">Solteiro(a)</option>
+			<option value="casado">Casado(a)</option>
+			<option value="divorciado">Divorciado(a)</option>
+			<option value="viuvo">Viúvo(a)</option>
+		</select><br><br>
+
+		<input type="button" value="Limpar Dados" onclick="limpar()">
+
+	</form>
+
+	<script>
+		function limpar() {
+			document.getElementById("nome").value = "";
+			document.getElementById("rg").value = "";
+			document.getElementById("cpf").value = "";
+			document.getElementById("endereco").value = "";
+			document.getElementById("sexo").value = "feminino";
+			document.getElementById("data_nascimento").value = "";
+			document.getElementById("situacao_civil").value = "solteiro";
+		}
+	</script>
+
+</body>
+</html>

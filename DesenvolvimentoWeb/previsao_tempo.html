@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Previsão do Tempo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 30px;
+      }
+      form {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+      }
+      label, input {
+        font-size: 1.2rem;
+      }
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      .result {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Previsão do Tempo</h1>
+    <form id="city-form">
+      <label for="city-input">Digite o nome da cidade:</label>
+      <input type="text" id="city-input" name="city" required>
+      <input type="submit" value="Buscar">
+    </form>
+    <div class="result" id="result"></div>
+    <script>
+      // Captura o formulário de busca e adiciona um ouvinte de evento
+      const form = document.getElementById('city-form');
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();  // Previne o envio do formulário padrão
+        const city = document.getElementById('city-input').value;
+        // Faz uma solicitação à API de previsão do tempo para a cidade especificada pelo usuário
+        fetch(`https://weather.contrateumdev.com.br/api/weather/city/?city=${city}`)
+          .then(response => response.json())
+          .then(data => {
+            const cityName = data.name;
+            const tempMax = data.main.temp_max;
+            const tempMin = data.main.temp_min;
+            // Exibe a resposta na tela
+            const result = document.getElementById('result');
+            result.innerHTML = `Previsão do tempo para ${cityName}:<br>
+                                Temperatura máxima: ${tempMax}°C<br>
+                                Temperatura mínima: ${tempMin}°C`;
+          })
+          .catch(error => {
+            console.error(error);
+            alert('Ocorreu um erro ao buscar a previsão do tempo. Por favor, tente novamente.');
+          });
+      });
+    </script>
+  </body>
+</html>

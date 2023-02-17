@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 03</title>
+</head>
+
+<body>
+    <div>
+
+        <b>
+            <h1>Ficha Cadastral</h1>
+        </b>
+
+        <form action="">
+            <div>
+                <label class="nome" for="nome">Nome: </label>
+                <input type="text" class="form-control" id="nome">
+            </div>
+            <div>
+                <label class="rg" for="rg">RG: </label>
+                <input type="number" class="form-control" id="rg">
+                <label class="cpf" for="cpf">CPF: </label>
+                <input type="number" class="form-control" id="cpf">
+            </div>
+            <div>
+                <label class="endereco" for="endereco">Endereço: </label>
+                <input type="text" class="form-control" id="endereco">
+            </div>
+
+            <label for="sexo">Sexo: </label>
+            <select name="sexo" id="sexo">
+                <option value="">Masculino</option>
+                <option value="">Feminino</option>
+            </select>
+
+            <label class="data_nascimento" for="data_nascimento">Data Nascimento: </label>
+            <input type="date" class="form-control" id="data_nascimento">
+
+
+            <div>
+                <label for="situacao_civil">Situação Civil: </label>
+                <label><input type="radio" name="situacao_civil" value="solteiro"> Solteiro(a)</label>
+                <label><input type="radio" name="situacao_civil" value="casado"> Casado(a)</label>
+                <label><input type="radio" name="situacao_civil" value="viuvo"> Viúvo(a)</label>
+            </div>
+
+            <div>
+
+                <button type="reset">Limpar Dados</button>
+            </div>
+
+        </form>
+
+
+
+    </div>
+
+</body>
+
+</html>
